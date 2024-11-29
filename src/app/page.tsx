@@ -15,7 +15,6 @@ export default function Home() {
   const [years, setYears] = useState<number[]>([]);
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
 
-  // Fetch vehicle makes from the API
   useEffect(() => {
     async function fetchMakes() {
       const response = await fetch(
@@ -27,7 +26,6 @@ export default function Home() {
     fetchMakes();
   }, []);
 
-  // Generate years dynamically
   useEffect(() => {
     const currentYear = new Date().getFullYear();
     const yearsArray: number[] = [];
@@ -37,7 +35,6 @@ export default function Home() {
     setYears(yearsArray);
   }, []);
 
-  // Enable/Disable button
   useEffect(() => {
     setIsButtonDisabled(!(selectedMake && selectedYear));
   }, [selectedMake, selectedYear]);

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 
 export default function ResultPage() {
-  const { make, year } = useParams(); // Extract dynamic params from URL
+  const { make, year } = useParams();
   const [models, setModels] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
